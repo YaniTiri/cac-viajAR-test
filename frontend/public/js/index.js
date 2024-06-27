@@ -1,6 +1,6 @@
 /* DOMContentLoaded*/ //para asegurar que el script se ejecute despues que el dom haya cargado
 
-require('dotenv').config();
+
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
