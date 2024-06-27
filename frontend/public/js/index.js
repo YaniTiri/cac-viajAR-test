@@ -1,6 +1,6 @@
 /* DOMContentLoaded*/ //para asegurar que el script se ejecute despues que el dom haya cargado
 
-//const { default: axios } = require("axios");
+require('dotenv').config();
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
