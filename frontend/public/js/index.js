@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const fetchPaquetes = async ()=>{
 
     try {
-      const respuesta = await axios(`https://yanina.alwaysdata.net/paquetes`);
+      const respuesta = await axios.get (`https://yanina.alwaysdata.net/paquetes/`);
       //console.log(respuesta.data);
       const paquetes = respuesta.data;
       //Borrar todo antes de cargar?
