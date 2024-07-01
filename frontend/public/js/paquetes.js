@@ -2,6 +2,9 @@
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
+     const servidorURL="http://yanina.alwaysdata.net";
+    //const servidorURL = "http://localhost:3001"
+
     const bodyTablaPaquetes = document.querySelector("#body-tabla-paquetes");
     
    // const formEditarPaquetes = document.querySelector("#formulario-editar-paquetes");
@@ -10,7 +13,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     const listarPaquetes = async ()=>{
         try {
-            const respuesta = await axios.get (`http://localhost:3001/paquetes`)
+            const respuesta = await axios.get (`${servidorURL}/paquetes`)
             //console.log(respuesta.data);
             const paquetes = respuesta.data;
 
@@ -112,7 +115,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //funcion para eliminar un paquete
     const borrarPaquete = async (id)=>{
         try {
-            await axios.delete(`http://localhost:3001/paquetes/${id}`)
+            await axios.delete(`${servidorURL}/paquetes/${id}`)
             //recargar lista de paquetes
             listarPaquetes();
             //modal o alert

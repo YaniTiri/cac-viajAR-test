@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     const formEditarPaquetes = document.querySelector("#formulario-editar-paquetes");
 
+    const servidorURL="http://yanina.alwaysdata.net";
+    //const servidorURL = "http://localhost:3001"
+
     const parametrosURL = new URLSearchParams(window.location.search);
     const IdPosteo =parametrosURL.get("id");
 
     const listarUnPaquete = async (id)=>{
         try {
-            const respuesta =  await axios.get(`http://localhost:3001/paquetes/${id}`);
+            const respuesta =  await axios.get(`${servidorURL}/paquetes/${id}`);
             const paquete = respuesta.data;
 
             console.log(paquete);
@@ -45,7 +48,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         };
         try {
             //console.log(editarPaquete +" "+ IdPosteo);
-            await axios.put(`http://localhost:3001/paquetes/${IdPosteo}`,editarPaquete);
+            await axios.put(`${servidorURL}/paquetes/${IdPosteo}`,editarPaquete);
             //console.log(editarPaquete);
             //limpiar formulario
             formEditarPaquetes.reset();

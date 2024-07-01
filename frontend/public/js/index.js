@@ -4,12 +4,15 @@
 
 document.addEventListener("DOMContentLoaded", ()=>{
 
+    const servidorURL="http://yanina.alwaysdata.net";
+    //const servidorURL = "http://localhost:3001"
+
   const paquetesContainer = document.querySelector("#paquetesContainer");
 
   const fetchPaquetes = async ()=>{
 
     try {
-      const respuesta = await axios (`https://yanina.alwaysdata.net/paquetes`);
+      const respuesta = await axios (`${servidorURL}/paquetes`);
       //console.log(respuesta.data);
       const paquetes = respuesta.data;
       //Borrar todo antes de cargar?

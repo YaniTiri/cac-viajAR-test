@@ -1,5 +1,8 @@
 
 document.addEventListener("DOMContentLoaded", ()=>{
+
+    const servidorURL="http://yanina.alwaysdata.net";
+    //const servidorURL = "http://localhost:3001"
     
     const formCrearPaquetes = document.querySelector("#formulario-crear-paquetes");
 
@@ -18,7 +21,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         };
         try {
             //console.log(nuevoPaquete);
-            await axios.post(`http://localhost:3001/paquetes/`,nuevoPaquete)
+            await axios.post(`${servidorURL}/paquetes/`,nuevoPaquete)
             //limpiar formulario
             formCrearPaquetes.reset();
             //alert o modal y regresar a listar paquetes
