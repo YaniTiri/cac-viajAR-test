@@ -20,8 +20,6 @@ const PORT = process.env.PORT || 3001;
 app.use("/paquetes", paquetesRouter)
 app.use ("/usuarios",usuariosRouter)
 
-// Imprimir __dirname para verificar su valor
-console.log('__dirname:', __dirname);
 
 
 app.use(express.static(path.join(__dirname, '../frontend/public')));
@@ -32,7 +30,9 @@ app.get('/', (req, res) => {
 
 app.get("/miperfil", authenticate.soloAdmin);
 
-
+app.get('/listaPaquetes', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/listarPaquetes.html'));
+});
 
 app.get('/patagonia', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/patagonia.html'));
@@ -52,9 +52,7 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/login.html'));
 });
 
-app.get('/listaPaquetes', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/public/views/listarPaquetes.html'));
-});
+
 
 //conexion a la base de datos
 const conexionDB = async ()=>{
