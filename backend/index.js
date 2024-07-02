@@ -50,6 +50,10 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/login.html'));
 });
 
+app.get('/listaPaquetes', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/public/views/listarPaquetes.html'));
+});
+
 //conexion a la base de datos
 const conexionDB = async ()=>{
     try {
