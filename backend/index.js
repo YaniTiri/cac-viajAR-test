@@ -53,11 +53,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/listaPaquetes', (req, res) => {
-    //res.sendFile(path.join(__dirname, '../frontend/public/views/listarPaquetes.html'));
-    const filePath = path.join(__dirname, '../frontend/public/views/listarPaquetes.html');
-    console.log('File path:', filePath);
-    res.sendFile(filePath);
-    return filePath
+    res.sendFile(path.join(__dirname, '../frontend/public/views/listarPaquetes.html'));
 });
 
 //conexion a la base de datos
@@ -73,5 +69,5 @@ const conexionDB = async ()=>{
 app.listen (PORT,()=>{
     conexionDB()
     console.log(`servidor OK : http://localhost:${PORT}`);
-    console.log('File path:', filePath);
+    
 })
