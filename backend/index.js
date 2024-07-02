@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 app.get("/miperfil", authenticate.soloAdmin);
 
-app.get('/listaPaquetes', (req, res) => {
+app.get('/listarPaquetes', (req, res) => {
     res.sendFile(path.join(__dirname, '../frontend/public/views/listarPaquetes.html'));
 });
 
