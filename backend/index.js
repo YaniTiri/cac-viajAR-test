@@ -57,6 +57,7 @@ app.get('/listaPaquetes', (req, res) => {
     const filePath = path.join(__dirname, '../frontend/public/views/listarPaquetes.html');
     console.log('File path:', filePath);
     res.sendFile(filePath);
+    return filePath
 });
 
 //conexion a la base de datos
