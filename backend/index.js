@@ -20,6 +20,8 @@ const PORT = process.env.PORT || 3001;
 app.use("/paquetes", paquetesRouter)
 app.use ("/usuarios",usuariosRouter)
 
+// Imprimir __dirname para verificar su valor
+console.log('__dirname:', __dirname);
 
 
 app.use(express.static(path.join(__dirname, '../frontend/public')));
@@ -70,4 +72,5 @@ const conexionDB = async ()=>{
 app.listen (PORT,()=>{
     conexionDB()
     console.log(`servidor OK : http://localhost:${PORT}`);
+    console.log('File path:', filePath);
 })
